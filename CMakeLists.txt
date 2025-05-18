@@ -15,7 +15,7 @@ set(WASI_SDK_TARGETS "wasm32-wasi;wasm32-wasip1;wasm32-wasip2;wasm32-wasip1-thre
   CACHE STRING "List of WASI targets to build")
 option(WASI_SDK_BUILD_TOOLCHAIN "Build a toolchain instead of the sysroot" OFF)
 
-set(llvm_proj_dir ${CMAKE_CURRENT_SOURCE_DIR}/src/llvm-project)
+set(llvm_proj_dir "/home/lukas2/Uni_No_Backup/ma/llvm-project")
 set(wasi_libc ${CMAKE_CURRENT_SOURCE_DIR}/src/wasi-libc)
 
 include(wasi-sdk-enable-ccache)
