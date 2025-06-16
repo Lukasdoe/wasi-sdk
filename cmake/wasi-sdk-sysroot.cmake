@@ -351,7 +351,7 @@ endforeach()
 # Install a `VERSION` file in the output prefix with a dump of version
 # information.
 execute_process(
-  COMMAND ${PYTHON} ${version_script} dump
+  COMMAND ${PYTHON} ${version_script} dump --llvm-dir ${llvm_proj_dir}
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   OUTPUT_VARIABLE version_dump)
 set(version_file_tmp ${wasi_sysroot}/VERSION)

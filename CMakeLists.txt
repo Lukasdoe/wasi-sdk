@@ -15,7 +15,6 @@ set(WASI_SDK_TARGETS "wasm32-wasi;wasm32-wasip1;wasm32-wasip2;wasm32-wasip1-thre
   CACHE STRING "List of WASI targets to build")
 option(WASI_SDK_BUILD_TOOLCHAIN "Build a toolchain instead of the sysroot" OFF)
 
-set(llvm_proj_dir "/home/lukas2/Uni_No_Backup/ma/llvm-project")
 set(wasi_libc ${CMAKE_CURRENT_SOURCE_DIR}/src/wasi-libc)
 
 include(wasi-sdk-enable-ccache)
@@ -25,7 +24,7 @@ find_program(PYTHON python3 python REQUIRED)
 # Set some variables based on the `version.py` script
 set(version_script ${CMAKE_CURRENT_SOURCE_DIR}/version.py)
 execute_process(
-  COMMAND ${PYTHON} ${version_script}
+  COMMAND ${PYTHON} ${version_script} --llvm-dir ${llvm_proj_dir}
   OUTPUT_VARIABLE wasi_sdk_version
   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
