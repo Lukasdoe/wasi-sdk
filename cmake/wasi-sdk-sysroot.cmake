@@ -287,6 +287,7 @@ function(define_libcxx_sub target target_suffix extra_target_flags extra_libdir_
       -DLIBCXXABI_LIBDIR_SUFFIX=/${target}${extra_libdir_suffix}
       -DLIBCXX_INCLUDE_TESTS=OFF
       -DLIBCXX_INCLUDE_BENCHMARKS=OFF
+      -DLLVM_CCACHE_BUILD=ON
 
     # See https://www.scivision.dev/cmake-externalproject-list-arguments/ for
     # why this is in `CMAKE_CACHE_ARGS` instead of above
